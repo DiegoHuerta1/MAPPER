@@ -1,2 +1,14 @@
 # MAPPER
 Algoritmo Mapper usando sobre los embedings de oraciones de un modelo BERT
+
+
+
+Los modelos tipo BERT (Bidirectional Encoder Representations from Transformers) son redes neuronales ampliamente utilizadas en el procesamiento de lenguaje natural (NLP) y representan el estado del arte para una variedad de tareas lingüísticas. Estos modelos, en términos generales, toman como entrada un conjunto de palabras (una oracion) y generan una serie de vectores, uno por cada palabra en la secuencia, además de un vector especial asociado a un token denominado "CLS."
+
+Los modelos BERT se someten a un proceso de pre-entrenamiento en el que se abordan dos tareas fundamentales: modelado de lenguaje y predicción de la siguiente oración. Esto les permite capturar un profundo conocimiento de la estructura y el uso del lenguaje natural. Además, después de esta fase de pre-entrenamiento, es posible realizar fine-tuning o ajustes específicos en estos modelos para adaptarlos a tareas particulares. Este ajuste generalmente implica entrenar una capa adicional, como una capa de clasificación, en la parte superior del modelo original.
+
+Una de las funciones destacadas de los modelos BERT es su capacidad para generar embeddings de oraciones. Esto se logra mediante el proceso de pooling, donde se obtiene el vector de representación de la oración a partir del token "CLS" en la última capa del modelo BERT. El token "CLS" contiene información condensada sobre la oración en su contexto y se utiliza como representación de toda la oración.
+
+Los vectores generados por un modelo BERT típicamente residen en un espacio de 768 dimensiones, correspondientes a la última capa del modelo. Por lo tanto, el proceso de embedings de oraciones de un modelo BERT se puede pensar como una funcion $f: O \rightarrow \mathbb{R}^{768}$. Donde $O$ es el espacio de oraciones. Es decir, el embedding resultante de un modelo BERT consiste en transformar una oración en un vector de 768 dimensiones.
+
+Este proyecto se enfoca en el análisis del espacio topológico de embeddings generados por un modelo BERT que ha sido fine-tuneado específicamente para la clasificación de sentimientos. El objetivo principal es explorar y comprender la estructura de este espacio. Es decir, se quiere estudiar la imagen $f(O)$ como espacio topologico. Para lograr esto, se recopilará un conjunto de datos de oraciones que expresan emociones y se calcularán los embeddings correspondientes mediante el proceso de pooling CLS en la última capa del modelo BERT fine-tuneado. Posteriormente, se aplicará el algoritmo Mapper para visualizar la estructura topológica de estos vectores en un espacio de alta dimensionalidad. Esta exploración permitirá una comprensión más profunda de cómo las representaciones de sentimientos se organizan en el espacio de embeddings y ayudará a identificar patrones o agrupamientos significativos en los datos
